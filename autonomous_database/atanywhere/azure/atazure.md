@@ -2,11 +2,7 @@
 
 ## Introduction
 
-Learn about using Oracle Database@Azure to run Oracle Databases in your existing Azure environment.
-
-Oracle Database@Azure is an Oracle Cloud Database service that runs Oracle Database workloads in your Azure environment. All hardware for Oracle Database@Azure is colocated in Azure's data centers and uses Azure networking. The service benefits from the simplicity, security, and low latency of a single operating environment within Azure. Federated identity and access management for Oracle Database@Azure is provided by Microsoft Entra ID.
-
-The above introduction was sourced from [here](https://docs.oracle.com/en-us/iaas/Content/database-at-azure/oaa.htm)
+Oracle Database@Azure is an Oracle Cloud Database service that runs Oracle Database workloads in your Azure environment. All hardware for Oracle Database@Azure is colocated in Azure's data centers and uses Azure networking. The service benefits from the simplicity, security, and low latency of a single operating environment within Azure. Federated identity and access management for Oracle Database@Azure is provided by Microsoft Entra ID. The above introduction was sourced from [here](https://docs.oracle.com/en-us/iaas/Content/database-at-azure/oaa.htm)
 
 In this Workshop, we’ll explore the following:
 
@@ -43,10 +39,6 @@ Please reference the below links to complete all the Onboarding Steps.  Once the
 <https://docs.oracle.com/en-us/iaas/Content/database-at-azure/oaaprerequisites.htm>
 
 ## Task 1: Provision ADB-S via Azure Portal and Download Wallet
-
-<https://learn.microsoft.com/en-us/azure/oracle/oracle-db/oracle-database-provision-autonomous-database>
-
-<https://docs.oracle.com/en-us/iaas/Content/database-at-azure-autonomous/odadb-provisioning-autonomous-database-azure.html>
 
 1. Log Into Azure Portal
 
@@ -117,6 +109,12 @@ Please reference the below links to complete all the Onboarding Steps.  Once the
 17. Copy Wallet Zip File to Desired Location and Unzip it (e.g., C:\\adbs\_at\_azure\\adb_wallets\\)
 
     ![Wallet Unzipped](images/azure/wallet_unzip.png)
+
+18. Additional informational links.
+
+    <https://learn.microsoft.com/en-us/azure/oracle/oracle-db/oracle-database-provision-autonomous-database>
+
+    <https://docs.oracle.com/en-us/iaas/Content/database-at-azure-autonomous/odadb-provisioning-autonomous-database-azure.html>
 
 ## Task 2: Install VSCode, Oracle SQL Developer Extension for VSCode, Define and Test ADB-S Connection
 
