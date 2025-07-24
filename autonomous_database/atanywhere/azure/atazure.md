@@ -2,8 +2,6 @@
 
 ## Introduction
 
-Learn about using Oracle Database@Azure to run Oracle Databases in your existing Azure environment.
-
 Oracle Database@Azure is an Oracle Cloud Database service that runs Oracle Database workloads in your Azure environment. All hardware for Oracle Database@Azure is colocated in Azure's data centers and uses Azure networking. The service benefits from the simplicity, security, and low latency of a single operating environment within Azure. Federated identity and access management for Oracle Database@Azure is provided by Microsoft Entra ID.
 
 The above introduction was sourced from [here](https://docs.oracle.com/en-us/iaas/Content/database-at-azure/oaa.htm)
