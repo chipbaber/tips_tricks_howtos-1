@@ -393,7 +393,7 @@ As the user **adbsatazure**, issue the below SQL Statements
 
 6. Create a new file for your first CRUD application. Name your file **dotnet\_crud\_adbs.cs**
 
-    Create the file:
+    List the project name then create a new file:
     ```
     <copy>
     New-Item -Name "dotnet_crud_adbs.cs" -ItemType File
@@ -540,7 +540,7 @@ As the user **adbsatazure**, issue the below SQL Statements
                         string lastName = Console.ReadLine()!;
                         Console.Write("Enter new Email: ");
                         string email = Console.ReadLine()!;
-                       cls Console.Write("Enter new Salary: ");
+                        Console.Write("Enter new Salary: ");
                         decimal salary = Convert.ToDecimal(Console.ReadLine());
 
                         string sql = "UPDATE employees SET first_name = :firstName, last_name = :lastName, email = :email, salary = :salary WHERE id = :id";
@@ -600,6 +600,8 @@ As the user **adbsatazure**, issue the below SQL Statements
     ```
 
 7. Test .NET Application
+
+    Remove or change the extension of the program.cs file created earlier. Then run your new program. 
 
     ```
     <copy>
