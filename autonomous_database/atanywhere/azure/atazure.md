@@ -247,7 +247,7 @@ As the user **adbsatazure**, issue the below SQL Statements
 
     ![Create Table](images/dbsetup/create_table.png)    
 
-2. Load Data into Employees Table
+2. Paste into SQL*Worksheet the Insert Statements below Load Data into Employees Table.
 
     ```
     <copy>
@@ -304,6 +304,7 @@ As the user **adbsatazure**, issue the below SQL Statements
     commit;
     </copy>
     ```
+    You will need to click the **Run Script** button to execute all the statements at one time. 
 
     ![Load Data](images/dbsetup/load_data.png)    
     
@@ -315,9 +316,12 @@ As the user **adbsatazure**, issue the below SQL Statements
     
 ## Task 6: .NET Setup and Sample Application
 
-1. Download and Install .NET SDK
+1. Download and Install .NET SDK the Latest Version of .NET
+    Go to:
 
     <https://dotnet.microsoft.com/download>
+
+    After Download Open the file.
 
     ![](images/dotnet/install1.png)
 
@@ -327,7 +331,11 @@ As the user **adbsatazure**, issue the below SQL Statements
 
     Click Close
 
-2. Verify .NET Environment in VSCode Terminal
+2. Open a New Terminal in VSCode. Please note you may have to close and open the program the first time you install the .Net framework.
+
+    ![Open Terminal](images/dotnet/openterminal.png)
+
+    Verify .NET Environment in VSCode Terminal
 
     ```
     <copy>
@@ -361,9 +369,7 @@ As the user **adbsatazure**, issue the below SQL Statements
     
     ![Run Hello World Application](images/dotnet/run_helloworld_app.png)
 
-5. Install Oracle Data Provider for .NET
-
-    <https://www.oracle.com/database/technologies/appdev/dotnet/odp.html>
+5. Install Oracle Data Provider for .NET by running the command below. 
 
     ```
     <copy>
@@ -379,11 +385,26 @@ As the user **adbsatazure**, issue the below SQL Statements
     </copy>
     ```
     
-    ![](images/dotnet/list_package.png)
+    ![List packages](images/dotnet/list_package.png)
 
-6. Create .NET Application File **dotnet\_crud\_adbs.cs**
+    For more information please visit. 
+    
+    <https://www.oracle.com/database/technologies/appdev/dotnet/odp.html>
 
-    **Note:** Update/Verify Database Username, Password, DSN and TnsAdmin Path
+6. Create a new file for your first CRUD application. Name your file **dotnet\_crud\_adbs.cs**
+
+    Create the file:
+    ```
+    <copy>
+    New-Item -Name "dotnet_crud_adbs.cs" -ItemType File
+    </copy>
+    ```
+
+    ![Create CRUD File](images/dotnet/createcrudfile.png)
+
+    Open the file in VS Code and paste in the following. **Note:** Please update and verify your Database Username, Password, DSN and TnsAdmin Path on line 9 & 14 in the program code. 
+
+    ![Update Connection Info](images/dotnet/updateconnection_info.png)
 
     ```
     <copy>
@@ -582,7 +603,7 @@ As the user **adbsatazure**, issue the below SQL Statements
 
     ```
     <copy>
-    dotnet run
+    dotnet run dotnet_crud_adbs.cs
     </copy>
     ```
     
