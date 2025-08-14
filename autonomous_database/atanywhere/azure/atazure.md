@@ -48,7 +48,12 @@ Please reference the below links to complete all the Onboarding Steps.
 
     <https://portal.azure.com/>
     
+<<<<<<< HEAD
 2. Click on All Services, 
+=======
+2. Click on All Services
+
+>>>>>>> 226b5cc6ca74e533e26b31a0dc47169ed1946c8e
     ![All Services](images/azure/all_services0.png)
 
     then Databases, Oracle Database@Azure
@@ -140,8 +145,14 @@ Please reference the below links to complete all the Onboarding Steps.
     <https://docs.oracle.com/en/database/oracle/sql-developer-vscode/23.4/sqdnx/installing-oracle-sql-developer-vs-code.html>
 
 3. Click Create Connection
+<<<<<<< HEAD
     ![New Connection](images/vscode/create_connection.png)
 
+=======
+
+    ![New Connection](images/vscode/create_connection.png)
+
+>>>>>>> 226b5cc6ca74e533e26b31a0dc47169ed1946c8e
     Enter the **ADMIN** username and **PASSWORD** then select the WALLET.zip file downloaded in Task 1 as the configuration file. Click **TEST** and if successful **SAVE** to complete the setup. 
 
     ![Admin Connection](images/vscode/admin_connection.png)    
@@ -166,8 +177,34 @@ Please reference the below links to complete all the Onboarding Steps.
 
     ![Session Timezone](images/vscode/LLM_prompt.png)
 
+<<<<<<< HEAD
 6. Below are reference links for the actions above. 
  <https://docs.oracle.com/en/database/oracle/sql-developer-vscode/23.4/sqdnx/connecting-your-database.html>
+=======
+6. Below are reference links for the actions above.
+
+    <https://docs.oracle.com/en/database/oracle/sql-developer-vscode/23.4/sqdnx/connecting-your-database.html>
+
+## Task 2a: Install and Setup SQLcl MCP Server included with Oracle SQL Developer Extension for VSCode (Optional)
+
+The Oracle SQLcl Model Context Protocol (MCP) Server transforms how you interact with the Oracle Database by enabling seamless communication with Artificial Intelligence (AI) applications.
+
+It enables you to perform operations, create reports, and run queries on Oracle Database using natural language through AI-powered interactions. Discover the capabilities of the Oracle SQLcl MCP Server, and learn how to use it with popular MCP clients.
+
+**Caution** When you grant a large language model (LLM) access to your database, it introduces significant security risks. Because LLMs use the data you input to generate responses, you might inadvertently expose unintended tables or sensitive details.  Please refere to the below link for additional details and **Warnings**.
+
+[Using the Oracle SQLcl MCP Server] (https://docs.oracle.com/en/database/oracle/sql-developer-vscode/25.2/sqdnx/using-oracle-sqlcl-mcp-server.html)
+
+Refer to the following documentation for **Preparing Your Environment**
+
+[Preparing Your Environment] (https://docs.oracle.com/en/database/oracle/sql-developer-vscode/25.2/sqdnx/preparing-your-environment.html)
+
+In addition, please reference the below YouTube recordings on how to setup and leverage the **SQLcl MCP Server** included with the **Oracle SQL Developer Extension** for VSCode.
+
+[Zero to Vibe Coding on Autonmous Database in 5 Minutes](youtube:TvQb7H11zYM)
+
+[Introducing SQL Developer Copilot Integration in Microsoft VSCode & MCP Support for Oracle Database](youtube:hj6WoZVGUBg)
+>>>>>>> 226b5cc6ca74e533e26b31a0dc47169ed1946c8e
 
 ## Task 3: Download and Install Oracle Instant Client
 
@@ -188,7 +225,14 @@ Please reference the below links to complete all the Onboarding Steps.
 3. Copy the **tnsnames.ora**, **cwallet.sso** and **sqlnet.ora** files from the downloaded wallet into the directory **C:\\Oracle\\instantclient\_23\_8\\network\\admin**
     ![Copy Files](images/instantclient/copy_files.png)
 
+<<<<<<< HEAD
 4. Open the **tnsnames.ora** file you copied over in a text editor. Copy your connection name. (e.g. chipqa_high)
+=======
+    ![Copy Files](images/instantclient/copy_files.png)
+
+4. Open the **tnsnames.ora** file you copied over in a text editor. Copy your connection name. (e.g. **adbsatazure_high**)
+
+>>>>>>> 226b5cc6ca74e533e26b31a0dc47169ed1946c8e
     ![Copy Files](images/instantclient/connection.png)
 
 5. Test Connection Using SQL\*Plus 
@@ -313,7 +357,93 @@ As the user **adbsatazure**, issue the below SQL Statements
     Right-click on **employees** table and select **Open** and select **Data** tab
 
     ![View Data](images/dbsetup/view_data.png)        
+
+## Task 5a: Using the SQLcl MCP Server to Load Sample Data into ADB-S (Optional)
+
+If you completed **Task 2a: Install and Setup SQLcl MCP Server included with Oracle SQL Developer Extension for VSCode**, follow the below steps to create a table and load sample data into your Oracle Autonomous Database@Azure you provisioned in **Task 1: Provision ADB-S via Azure Portal and Download Wallet**.  
+
+**Note:**  If you completed **# Task 5: Load Sample Data into ADB-S** already, the table name in step 3 below should be different.  In addition, if you plan to leverage the table created through the **SQLcl MCP Server** the code samples below will need updated accordinly to match the table created.
+
+1. Using **Github Copilot Chat**, list the SQL Developer Connections Available
+
+    ```
+    <copy>
+    list connections
+    </copy>
+    ```
+
+    ![MCP List Connections](images/dbsetup/mcp_list_connections.png)
     
+    Click **Continue** to Proceed.
+
+    ![MCP List Connections2](images/dbsetup/mcp_list_connections2.png)
+
+2. Using **Github Copilot Chat**, Connect to the ADB-S Instance as the user **adbsatazure**
+
+    ```
+    <copy>
+    connect to adbsatazure
+    </copy>
+    ```
+
+    ![MCP Connect](images/dbsetup/mcp_connect_adbsatazure.png)
+
+    Click **Continue** to Proceed.
+    
+    ![MCP Connect2](images/dbsetup/mcp_connect_adbsatazure2.png)
+
+3. Using **Github Copilot Chat**, issue the following to create a table 
+
+    **Note:**  For demonstration purposes, the table name used is **employees_mcp** and does not match the code samples below.
+
+    ```
+    <copy>
+    create a table named employees_mcp with the following columns: id, first_name, last_name, email, salary. be sure the id column is the primary key and the value auto generated on insert
+    </copy>
+    ```
+
+    ![MCP Create Table](images/dbsetup/mcp_create_table.png)
+
+    Click **Continue** to Proceed.
+    
+    ![MCP Create Table2](images/dbsetup/mcp_create_table2.png)
+
+4. Using **Github Copilot Chat**, issue the following to load sample data   
+
+    ```
+    <copy>
+    load 25 rows of sample data into the table employees_mcp, be sure to use real first and last names and be sure to issue the commit statement after loading the data 
+    </copy>
+    ```
+
+    ![MCP Load Data](images/dbsetup/mcp_load_data.png)
+
+    Click **Continue** to Proceed.
+    
+    ![MCP Load Data2](images/dbsetup/mcp_load_data2.png)    
+
+    Click **Continue** to Proceed.
+
+    ![MCP Load Data3](images/dbsetup/mcp_load_data3.png)    
+
+5. Using **Github Copilot Chat**, issue the following to view the sample data
+    
+    ```
+    <copy>
+    show me a 5 rows of data from the emploees_mcp table    
+    </copy>
+    ```    
+
+    ![MCP View Data](images/dbsetup/mcp_view_data.png)       
+
+    Click **Continue** to Proceed.
+    
+    ![MCP View Data2](images/dbsetup/mcp_view_data2.png)       
+    
+    Here's an alternate view of the data 
+
+    ![MCP View Data3](images/dbsetup/mcp_view_data3.png)           
+
 ## Task 6: .NET Setup and Sample Application
 
 1. Download and Install .NET SDK the Latest Version of .NET
@@ -323,11 +453,15 @@ As the user **adbsatazure**, issue the below SQL Statements
 
     After Download Open the file.
 
+<<<<<<< HEAD
     ![](images/dotnet/install1.png)
+=======
+    ![DOTNET Insall 1](images/dotnet/install1.png)
+>>>>>>> 226b5cc6ca74e533e26b31a0dc47169ed1946c8e
 
     Click Install
 
-    ![](images/dotnet/install2.png)
+    ![DOTNET Insall 2](images/dotnet/install2.png)
 
     Click Close
 
